@@ -12,6 +12,7 @@ import com.vaadin.ui.Label;
 import com.vaadin.ui.UI;
 import com.vaadin.ui.VerticalLayout;
 
+//add something here to check the repo
 @SuppressWarnings("serial")
 @Theme("jrs")
 public class JrsUI extends UI {
