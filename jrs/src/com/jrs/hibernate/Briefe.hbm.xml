@@ -1,0 +1,69 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated Dec 28, 2013 6:02:02 PM by Hibernate Tools 3.4.0.CR1 -->
+<hibernate-mapping>
+    <class name="Briefe" table="briefe" catalog="jrsdbmysql">
+        <id name="id" type="int">
+            <column name="ID" />
+            <generator class="assigned" />
+        </id>
+        <many-to-one name="adressen" class="Adressen" fetch="select">
+            <column name="AdresseID" />
+        </many-to-one>
+        <many-to-one name="aktionen" class="Aktionen" fetch="select">
+            <column name="AktionID" />
+        </many-to-one>
+        <property name="gesperrt" type="java.lang.Boolean">
+            <column name="Gesperrt" />
+        </property>
+        <property name="letzte&#196;nderung" type="timestamp">
+            <column name="Letzte&#196;nderung" length="19" />
+        </property>
+        <property name="angelegtAm" type="timestamp">
+            <column name="AngelegtAm" length="19" />
+        </property>
+        <property name="datum" type="timestamp">
+            <column name="Datum" length="19" />
+        </property>
+        <property name="bearbeiter" type="string">
+            <column name="Bearbeiter" length="50" />
+        </property>
+        <property name="status" type="java.lang.Double">
+            <column name="Status" precision="22" scale="0" />
+        </property>
+        <property name="text1" type="string">
+            <column name="Text1" length="16777215" />
+        </property>
+        <property name="anschrift" type="java.lang.Short">
+            <column name="Anschrift" />
+        </property>
+        <property name="anrede" type="string">
+            <column name="Anrede" length="50" />
+        </property>
+        <property name="betrifft" type="string">
+            <column name="Betrifft" length="150" />
+        </property>
+        <property name="anlagen" type="string">
+            <column name="Anlagen" length="250" />
+        </property>
+        <property name="servus" type="string">
+            <column name="Servus" length="50" />
+        </property>
+        <property name="nummer" type="string">
+            <column name="Nummer" length="50" />
+        </property>
+        <property name="typ" type="java.lang.Short">
+            <column name="Typ" />
+        </property>
+        <property name="namederAktion" type="string">
+            <column name="NamederAktion" length="250" />
+        </property>
+        <property name="vorname" type="java.lang.Boolean">
+            <column name="Vorname" />
+        </property>
+        <property name="nachname" type="java.lang.Boolean">
+            <column name="Nachname" />
+        </property>
+    </class>
+</hibernate-mapping>

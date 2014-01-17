@@ -1,0 +1,25 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated Dec 28, 2013 6:02:02 PM by Hibernate Tools 3.4.0.CR1 -->
+<hibernate-mapping>
+    <class name="Differenz" table="differenz" catalog="jrsdbmysql">
+        <composite-id name="id" class="DifferenzId">
+            <key-property name="sch&#252;ler" type="string">
+                <column name="Sch&#252;ler" length="250" />
+            </key-property>
+            <key-property name="zahlungsart" type="string">
+                <column name="Zahlungsart" length="150" />
+            </key-property>
+            <key-property name="soll" type="java.lang.Double">
+                <column name="Soll" precision="22" scale="0" />
+            </key-property>
+            <key-property name="haben" type="java.lang.Double">
+                <column name="Haben" precision="22" scale="0" />
+            </key-property>
+            <key-property name="differenz" type="java.lang.Double">
+                <column name="Differenz" precision="22" scale="0" />
+            </key-property>
+        </composite-id>
+    </class>
+</hibernate-mapping>

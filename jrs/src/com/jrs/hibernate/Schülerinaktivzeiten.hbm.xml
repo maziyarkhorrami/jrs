@@ -1,0 +1,25 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated Dec 28, 2013 6:02:02 PM by Hibernate Tools 3.4.0.CR1 -->
+<hibernate-mapping>
+    <class name="Sch&#252;lerinaktivzeiten" table="sch&#252;lerinaktivzeiten" catalog="jrsdbmysql">
+        <composite-id name="id" class="Sch&#252;lerinaktivzeitenId">
+            <key-property name="id" type="java.lang.Integer">
+                <column name="ID" />
+            </key-property>
+            <key-property name="inaktivBis" type="timestamp">
+                <column name="InaktivBis" length="19" />
+            </key-property>
+            <key-property name="inaktivVon" type="timestamp">
+                <column name="InaktivVon" length="19" />
+            </key-property>
+            <key-property name="sch&#252;lerId" type="java.lang.Integer">
+                <column name="Sch&#252;lerID" />
+            </key-property>
+        </composite-id>
+        <many-to-one name="sch&#252;lerinformationen" class="Sch&#252;lerinformationen" update="false" insert="false" fetch="select">
+            <column name="Sch&#252;lerID" />
+        </many-to-one>
+    </class>
+</hibernate-mapping>

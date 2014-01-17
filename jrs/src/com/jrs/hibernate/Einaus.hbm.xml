@@ -1,0 +1,25 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated Dec 28, 2013 6:02:02 PM by Hibernate Tools 3.4.0.CR1 -->
+<hibernate-mapping>
+    <class name="Einaus" table="einaus" catalog="jrsdbmysql">
+        <composite-id name="id" class="EinausId">
+            <key-property name="kategorie" type="string">
+                <column name="Kategorie" length="150" />
+            </key-property>
+            <key-property name="summeVonSollEin" type="java.lang.Double">
+                <column name="`Summe von SollEIN`" precision="22" scale="0" />
+            </key-property>
+            <key-property name="summeVonIstEin" type="java.lang.Double">
+                <column name="`Summe von IstEIN`" precision="22" scale="0" />
+            </key-property>
+            <key-property name="summeVonSollAus" type="java.lang.Double">
+                <column name="`Summe von SollAUS`" precision="22" scale="0" />
+            </key-property>
+            <key-property name="summeVonIstAus" type="java.lang.Double">
+                <column name="`Summe von IstAUS`" precision="22" scale="0" />
+            </key-property>
+        </composite-id>
+    </class>
+</hibernate-mapping>

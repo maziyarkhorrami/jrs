@@ -1,0 +1,33 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated Dec 28, 2013 6:02:02 PM by Hibernate Tools 3.4.0.CR1 -->
+<hibernate-mapping>
+    <class name="Benutzer" table="benutzer" catalog="jrsdbmysql">
+        <id name="benutzername" type="string">
+            <column name="benutzername" length="50" />
+            <generator class="assigned" />
+        </id>
+        <property name="kennwort" type="string">
+            <column name="kennwort" length="16" not-null="true" />
+        </property>
+        <property name="stellung" type="string">
+            <column name="stellung" length="45" not-null="true" />
+        </property>
+        <property name="vorname" type="string">
+            <column name="vorname" length="45" />
+        </property>
+        <property name="nachname" type="string">
+            <column name="nachname" length="45" />
+        </property>
+        <property name="geburtsdatum" type="date">
+            <column name="geburtsdatum" length="10" />
+        </property>
+        <property name="enabled" type="java.lang.Boolean">
+            <column name="enabled" />
+        </property>
+        <property name="admin" type="java.lang.Boolean">
+            <column name="admin" />
+        </property>
+    </class>
+</hibernate-mapping>

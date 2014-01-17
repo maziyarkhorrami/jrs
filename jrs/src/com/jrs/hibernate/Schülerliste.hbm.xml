@@ -1,0 +1,46 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated Dec 28, 2013 6:02:02 PM by Hibernate Tools 3.4.0.CR1 -->
+<hibernate-mapping>
+    <class name="Sch&#252;lerliste" table="sch&#252;lerliste" catalog="jrsdbmysql">
+        <composite-id name="id" class="Sch&#252;lerlisteId">
+            <key-property name="kategorie" type="string">
+                <column name="Kategorie" length="150" />
+            </key-property>
+            <key-property name="nachname" type="string">
+                <column name="Nachname" length="150" />
+            </key-property>
+            <key-property name="vorname" type="string">
+                <column name="Vorname" length="150" />
+            </key-property>
+            <key-property name="firma" type="string">
+                <column name="Firma" length="150" />
+            </key-property>
+            <key-property name="kurs" type="string">
+                <column name="Kurs" />
+            </key-property>
+            <key-property name="typ" type="string">
+                <column name="Typ" length="150" />
+            </key-property>
+            <key-property name="lehrer" type="java.lang.Integer">
+                <column name="Lehrer" />
+            </key-property>
+            <key-property name="stra&#223;e" type="string">
+                <column name="Stra&#223;e" length="150" />
+            </key-property>
+            <key-property name="plz" type="string">
+                <column name="PLZ" length="150" />
+            </key-property>
+            <key-property name="ort" type="string">
+                <column name="Ort" length="150" />
+            </key-property>
+            <key-property name="telefon" type="string">
+                <column name="Telefon" />
+            </key-property>
+            <key-property name="ersterWertVonK&#252;rzel" type="string">
+                <column name="`ErsterWert von K&#252;rzel`" />
+            </key-property>
+        </composite-id>
+    </class>
+</hibernate-mapping>

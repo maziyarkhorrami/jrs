@@ -1,0 +1,94 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated Dec 28, 2013 6:02:02 PM by Hibernate Tools 3.4.0.CR1 -->
+<hibernate-mapping>
+    <class name="Filter" table="filter" catalog="jrsdbmysql">
+        <composite-id name="id" class="FilterId">
+            <key-property name="id" type="java.lang.Integer">
+                <column name="ID" />
+            </key-property>
+            <key-property name="kategorieen" type="string">
+                <column name="Kategorieen" length="250" />
+            </key-property>
+            <key-property name="nachname" type="string">
+                <column name="Nachname" length="150" />
+            </key-property>
+            <key-property name="gruppe" type="string">
+                <column name="Gruppe" length="150" />
+            </key-property>
+            <key-property name="plz" type="string">
+                <column name="PLZ" length="50" />
+            </key-property>
+            <key-property name="ort" type="string">
+                <column name="Ort" length="150" />
+            </key-property>
+            <key-property name="land" type="string">
+                <column name="Land" length="150" />
+            </key-property>
+            <key-property name="geburtsdatumAb" type="timestamp">
+                <column name="GeburtsdatumAb" length="19" />
+            </key-property>
+            <key-property name="geburtsdatumBis" type="timestamp">
+                <column name="GeburtsdatumBis" length="19" />
+            </key-property>
+            <key-property name="kommentar" type="string">
+                <column name="Kommentar" length="250" />
+            </key-property>
+            <key-property name="aktiverSch&#252;ler" type="java.lang.Short">
+                <column name="aktiverSch&#252;ler" />
+            </key-property>
+            <key-property name="typUnterricht" type="java.lang.Integer">
+                <column name="TypUnterricht" />
+            </key-property>
+            <key-property name="interessen" type="string">
+                <column name="Interessen" length="16777215" />
+            </key-property>
+            <key-property name="instrumente" type="string">
+                <column name="Instrumente" length="16777215" />
+            </key-property>
+            <key-property name="aktionen" type="string">
+                <column name="Aktionen" length="16777215" />
+            </key-property>
+            <key-property name="name" type="string">
+                <column name="Name" length="50" />
+            </key-property>
+            <key-property name="aktionen2" type="string">
+                <column name="Aktionen2" length="16777215" />
+            </key-property>
+            <key-property name="betreff" type="string">
+                <column name="Betreff" length="150" />
+            </key-property>
+            <key-property name="erstKontaktVon" type="timestamp">
+                <column name="ErstKontaktVon" length="19" />
+            </key-property>
+            <key-property name="erstKontaktBis" type="timestamp">
+                <column name="ErstKontaktBis" length="19" />
+            </key-property>
+            <key-property name="sqlzusatz" type="string">
+                <column name="SQLZusatz" length="16777215" />
+            </key-property>
+            <key-property name="historyVon" type="timestamp">
+                <column name="HistoryVon" length="19" />
+            </key-property>
+            <key-property name="historyBis" type="string">
+                <column name="HistoryBis" length="50" />
+            </key-property>
+            <key-property name="alterVon" type="java.lang.Short">
+                <column name="AlterVon" />
+            </key-property>
+            <key-property name="alterBis" type="java.lang.Short">
+                <column name="AlterBis" />
+            </key-property>
+            <key-property name="email" type="java.lang.Short">
+                <column name="EMail" />
+            </key-property>
+            <key-property name="kontakte" type="string">
+                <column name="Kontakte" length="16777215" />
+            </key-property>
+            <key-property name="nichtAktuell" type="java.lang.Boolean">
+                <column name="NichtAktuell" />
+            </key-property>
+        </composite-id>
+    </class>
+</hibernate-mapping>

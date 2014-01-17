@@ -1,0 +1,63 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated Dec 28, 2013 6:02:02 PM by Hibernate Tools 3.4.0.CR1 -->
+<hibernate-mapping>
+    <class name="Anschriften" table="anschriften" catalog="jrsdbmysql">
+        <id name="id" type="int">
+            <column name="ID" />
+            <generator class="assigned" />
+        </id>
+        <many-to-one name="adressen" class="Adressen" fetch="select">
+            <column name="AdresseID" />
+        </many-to-one>
+        <property name="anschriftenName" type="string">
+            <column name="AnschriftenName" length="150" />
+        </property>
+        <property name="anrede" type="string">
+            <column name="Anrede" length="150" />
+        </property>
+        <property name="firma" type="string">
+            <column name="Firma" length="150" />
+        </property>
+        <property name="vorname" type="string">
+            <column name="Vorname" length="150" />
+        </property>
+        <property name="nachname" type="string">
+            <column name="Nachname" length="150" />
+        </property>
+        <property name="co" type="string">
+            <column name="co" length="150" />
+        </property>
+        <property name="stra&#223;e" type="string">
+            <column name="Stra&#223;e" length="150" />
+        </property>
+        <property name="plz" type="string">
+            <column name="PLZ" length="150" />
+        </property>
+        <property name="ort" type="string">
+            <column name="Ort" length="150" />
+        </property>
+        <property name="l&#228;nderk&#252;rzel" type="string">
+            <column name="L&#228;nderk&#252;rzel" length="150" />
+        </property>
+        <property name="land" type="string">
+            <column name="Land" length="150" />
+        </property>
+        <property name="nummer" type="java.lang.Short">
+            <column name="Nummer" />
+        </property>
+        <property name="letzte&#196;nderung" type="timestamp">
+            <column name="Letzte&#196;nderung" length="19" />
+        </property>
+        <property name="gesperrt" type="java.lang.Boolean">
+            <column name="gesperrt" />
+        </property>
+        <property name="name" type="string">
+            <column name="Name" length="250" />
+        </property>
+        <property name="hnr" type="java.lang.Short">
+            <column name="HNr" />
+        </property>
+    </class>
+</hibernate-mapping>

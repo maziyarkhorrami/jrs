@@ -1,0 +1,138 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated Dec 28, 2013 6:02:02 PM by Hibernate Tools 3.4.0.CR1 -->
+<hibernate-mapping>
+    <class name="Unterrichtsvertraege" table="unterrichtsvertraege" catalog="jrsdbmysql">
+        <id name="id" type="int">
+            <column name="ID" />
+            <generator class="assigned" />
+        </id>
+        <many-to-one name="adressen" class="Adressen" fetch="select">
+            <column name="AdresseID" />
+        </many-to-one>
+        <property name="status" type="java.lang.Integer">
+            <column name="Status" />
+        </property>
+        <property name="anrede" type="string">
+            <column name="Anrede" />
+        </property>
+        <property name="vorname" type="string">
+            <column name="Vorname" />
+        </property>
+        <property name="nachname" type="string">
+            <column name="Nachname" />
+        </property>
+        <property name="stra&#223;e" type="string">
+            <column name="Stra&#223;e" />
+        </property>
+        <property name="plz" type="string">
+            <column name="PLZ" />
+        </property>
+        <property name="ort" type="string">
+            <column name="Ort" />
+        </property>
+        <property name="telPrivat" type="string">
+            <column name="TelPrivat" />
+        </property>
+        <property name="telDienstl" type="string">
+            <column name="TelDienstl" />
+        </property>
+        <property name="telMobil" type="string">
+            <column name="TelMobil" />
+        </property>
+        <property name="email" type="string">
+            <column name="eMail" />
+        </property>
+        <property name="gebDat" type="string">
+            <column name="GebDat" />
+        </property>
+        <property name="anmeldungFuer" type="java.lang.Integer">
+            <column name="Anmeldung_fuer" />
+        </property>
+        <property name="anmeldungVorname" type="string">
+            <column name="Anmeldung_vorname" />
+        </property>
+        <property name="anmeldungNachname" type="string">
+            <column name="Anmeldung_Nachname" />
+        </property>
+        <property name="anmeldungGebDat" type="string">
+            <column name="Anmeldung_GebDat" />
+        </property>
+        <property name="einschreibeGeb&#252;hr" type="java.lang.Integer">
+            <column name="einschreibeGeb&#252;hr" />
+        </property>
+        <property name="kursId" type="java.lang.Integer">
+            <column name="KursID" />
+        </property>
+        <property name="instrumentId" type="java.lang.Integer">
+            <column name="InstrumentID" />
+        </property>
+        <property name="kategorie" type="java.lang.Integer">
+            <column name="Kategorie" />
+        </property>
+        <property name="rabattString" type="string">
+            <column name="RabattString" length="16777215" />
+        </property>
+        <property name="egeb&#252;hr" type="java.lang.Double">
+            <column name="EGeb&#252;hr" precision="22" scale="0" />
+        </property>
+        <property name="ehonorar1" type="java.lang.Double">
+            <column name="EHonorar1" precision="22" scale="0" />
+        </property>
+        <property name="ehonorar2" type="java.lang.Double">
+            <column name="EHonorar2" precision="22" scale="0" />
+        </property>
+        <property name="zahlungsArt" type="java.lang.Integer">
+            <column name="ZahlungsArt" />
+        </property>
+        <property name="zahlungsWeise" type="java.lang.Integer">
+            <column name="ZahlungsWeise" />
+        </property>
+        <property name="kontoInhaber" type="string">
+            <column name="KontoInhaber" />
+        </property>
+        <property name="kontoNr" type="string">
+            <column name="KontoNR" />
+        </property>
+        <property name="bank" type="string">
+            <column name="Bank" />
+        </property>
+        <property name="blz" type="string">
+            <column name="BLZ" />
+        </property>
+        <property name="ersteStunde" type="timestamp">
+            <column name="ErsteStunde" length="19" />
+        </property>
+        <property name="datumErstellung" type="timestamp">
+            <column name="DatumErstellung" length="19" />
+        </property>
+        <property name="datumVertrag" type="timestamp">
+            <column name="DatumVertrag" length="19" />
+        </property>
+        <property name="benutzer" type="java.lang.Integer">
+            <column name="Benutzer" />
+        </property>
+        <property name="beginntTyp" type="java.lang.Integer">
+            <column name="BeginntTyp" />
+        </property>
+        <property name="beginntParam" type="string">
+            <column name="BeginntParam" length="50" />
+        </property>
+        <property name="rabattText" type="string">
+            <column name="RabattText" length="16777215" />
+        </property>
+        <property name="geb&#252;hr" type="java.lang.Double">
+            <column name="Geb&#252;hr" precision="22" scale="0" />
+        </property>
+        <property name="weitereKurse" type="string">
+            <column name="WeitereKurse" length="16777215" />
+        </property>
+        <property name="geschwister" type="string">
+            <column name="Geschwister" length="16777215" />
+        </property>
+        <property name="bemerkungen" type="string">
+            <column name="Bemerkungen" length="16777215" />
+        </property>
+    </class>
+</hibernate-mapping>

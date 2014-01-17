@@ -1,0 +1,27 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated Dec 28, 2013 6:02:02 PM by Hibernate Tools 3.4.0.CR1 -->
+<hibernate-mapping>
+    <class name="Tarif" table="tarif" catalog="jrsdbmysql">
+        <id name="id" type="int">
+            <column name="ID" />
+            <generator class="assigned" />
+        </id>
+        <property name="bez" type="string">
+            <column name="Bez" length="150" />
+        </property>
+        <property name="unterrichtstyp" type="java.lang.Integer">
+            <column name="Unterrichtstyp" />
+        </property>
+        <property name="typ" type="string">
+            <column name="typ" length="4" />
+        </property>
+        <set name="tarifbetr&#228;ges" table="tarifbetr&#228;ge" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="TarifID" />
+            </key>
+            <one-to-many class="Tarifbetr&#228;ge" />
+        </set>
+    </class>
+</hibernate-mapping>

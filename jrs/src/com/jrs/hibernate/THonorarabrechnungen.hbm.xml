@@ -1,0 +1,18 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated Dec 28, 2013 6:02:02 PM by Hibernate Tools 3.4.0.CR1 -->
+<hibernate-mapping>
+    <class name="THonorarabrechnungen" table="t_honorarabrechnungen" catalog="jrsdbmysql">
+        <id name="id" type="int">
+            <column name="ID" />
+            <generator class="assigned" />
+        </id>
+        <property name="lehrer" type="java.lang.Integer">
+            <column name="Lehrer" />
+        </property>
+        <property name="zeitraum" type="timestamp">
+            <column name="Zeitraum" length="19" />
+        </property>
+    </class>
+</hibernate-mapping>

@@ -1,0 +1,42 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated Dec 28, 2013 6:02:02 PM by Hibernate Tools 3.4.0.CR1 -->
+<hibernate-mapping>
+    <class name="Buchungen" table="buchungen" catalog="jrsdbmysql">
+        <id name="id" type="int">
+            <column name="ID" />
+            <generator class="assigned" />
+        </id>
+        <many-to-one name="adressen" class="Adressen" fetch="select">
+            <column name="AdresseID" />
+        </many-to-one>
+        <property name="spezialId" type="java.lang.Integer">
+            <column name="SpezialID" />
+        </property>
+        <property name="betrag" type="big_decimal">
+            <column name="Betrag" scale="4" />
+        </property>
+        <property name="typ" type="java.lang.Short">
+            <column name="Typ" />
+        </property>
+        <property name="buchungsText" type="string">
+            <column name="BuchungsText" length="500" />
+        </property>
+        <property name="auszug" type="string">
+            <column name="Auszug" length="100" />
+        </property>
+        <property name="schwarz" type="boolean">
+            <column name="Schwarz" not-null="true" />
+        </property>
+        <property name="datum" type="timestamp">
+            <column name="Datum" length="19" />
+        </property>
+        <property name="angelegtam" type="timestamp">
+            <column name="Angelegtam" length="19" />
+        </property>
+        <property name="konto" type="java.lang.Integer">
+            <column name="Konto" />
+        </property>
+    </class>
+</hibernate-mapping>

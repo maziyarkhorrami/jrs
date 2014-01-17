@@ -1,0 +1,24 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated Dec 28, 2013 6:02:02 PM by Hibernate Tools 3.4.0.CR1 -->
+<hibernate-mapping>
+    <class name="Verweildauer" table="verweildauer" catalog="jrsdbmysql">
+        <id name="id" type="int">
+            <column name="ID" />
+            <generator class="assigned" />
+        </id>
+        <many-to-one name="kurse" class="Kurse" fetch="select">
+            <column name="KursID" />
+        </many-to-one>
+        <many-to-one name="sch&#252;lerinformationen" class="Sch&#252;lerinformationen" fetch="select">
+            <column name="Sch&#252;lerID" />
+        </many-to-one>
+        <property name="anzahlWochen" type="java.lang.Integer">
+            <column name="AnzahlWochen" />
+        </property>
+        <property name="lehrerId" type="java.lang.Integer">
+            <column name="LehrerID" />
+        </property>
+    </class>
+</hibernate-mapping>

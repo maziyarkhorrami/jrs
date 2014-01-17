@@ -1,0 +1,22 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated Dec 28, 2013 6:02:02 PM by Hibernate Tools 3.4.0.CR1 -->
+<hibernate-mapping>
+    <class name="Fachbelegung" table="fachbelegung" catalog="jrsdbmysql">
+        <composite-id name="id" class="FachbelegungId">
+            <key-property name="kategorie" type="string">
+                <column name="Kategorie" length="150" />
+            </key-property>
+            <key-property name="anzahlVonId" type="java.lang.Integer">
+                <column name="`Anzahl von ID`" />
+            </key-property>
+            <key-property name="name" type="string">
+                <column name="Name" length="150" />
+            </key-property>
+            <key-property name="instrument" type="string">
+                <column name="Instrument" />
+            </key-property>
+        </composite-id>
+    </class>
+</hibernate-mapping>

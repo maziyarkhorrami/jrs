@@ -1,0 +1,42 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated Dec 28, 2013 6:02:02 PM by Hibernate Tools 3.4.0.CR1 -->
+<hibernate-mapping>
+    <class name="Bankverbindungen" table="bankverbindungen" catalog="jrsdbmysql">
+        <id name="id" type="int">
+            <column name="ID" />
+            <generator class="assigned" />
+        </id>
+        <many-to-one name="adressen" class="Adressen" fetch="select">
+            <column name="AdresseID" />
+        </many-to-one>
+        <property name="name" type="string">
+            <column name="Name" length="150" />
+        </property>
+        <property name="inhaber" type="string">
+            <column name="Inhaber" length="150" />
+        </property>
+        <property name="kontoNummer" type="string">
+            <column name="KontoNummer" length="150" />
+        </property>
+        <property name="blz" type="string">
+            <column name="BLZ" length="150" />
+        </property>
+        <property name="bic" type="string">
+            <column name="BIC" length="150" />
+        </property>
+        <property name="swift" type="string">
+            <column name="SWIFT" length="150" />
+        </property>
+        <property name="typ" type="java.lang.Short">
+            <column name="Typ" />
+        </property>
+        <property name="letzte&#196;nderung" type="timestamp">
+            <column name="Letzte&#196;nderung" length="19" />
+        </property>
+        <property name="gesperrt" type="java.lang.Boolean">
+            <column name="gesperrt" />
+        </property>
+    </class>
+</hibernate-mapping>

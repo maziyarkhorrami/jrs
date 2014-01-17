@@ -1,0 +1,120 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated Dec 28, 2013 6:02:02 PM by Hibernate Tools 3.4.0.CR1 -->
+<hibernate-mapping>
+    <class name="Kurse" table="kurse" catalog="jrsdbmysql">
+        <id name="id" type="int">
+            <column name="ID" />
+            <generator class="assigned" />
+        </id>
+        <many-to-one name="turnus" class="Turnus" fetch="select">
+            <column name="Turnus" />
+        </many-to-one>
+        <property name="letzte&#196;nderung" type="timestamp">
+            <column name="Letzte&#196;nderung" length="19" />
+        </property>
+        <property name="angelgtAm" type="timestamp">
+            <column name="AngelgtAm" length="19" />
+        </property>
+        <property name="gesperrt" type="java.lang.Boolean">
+            <column name="gesperrt" />
+        </property>
+        <property name="name" type="string">
+            <column name="Name" length="250" />
+        </property>
+        <property name="typ" type="java.lang.Integer">
+            <column name="Typ" />
+        </property>
+        <property name="honorar" type="java.lang.Double">
+            <column name="Honorar" precision="22" scale="0" />
+        </property>
+        <property name="geb&#252;hr" type="java.lang.Double">
+            <column name="Geb&#252;hr" precision="22" scale="0" />
+        </property>
+        <property name="beschreibung" type="string">
+            <column name="Beschreibung" length="16777215" />
+        </property>
+        <property name="nummer" type="string">
+            <column name="Nummer" length="50" />
+        </property>
+        <property name="anzahlProTurnus" type="java.lang.Short">
+            <column name="AnzahlProTurnus" />
+        </property>
+        <property name="anzahlStunden" type="java.lang.Short">
+            <column name="AnzahlStunden" />
+        </property>
+        <property name="minTeilnehmer" type="java.lang.Short">
+            <column name="MinTeilnehmer" />
+        </property>
+        <property name="maxTeilnehmer" type="java.lang.Short">
+            <column name="MaxTeilnehmer" />
+        </property>
+        <property name="instrument" type="java.lang.Integer">
+            <column name="Instrument" />
+        </property>
+        <property name="g&#252;ltigBis" type="timestamp">
+            <column name="G&#252;ltigBis" length="19" />
+        </property>
+        <property name="m&#246;glicheKategorieen" type="string">
+            <column name="M&#246;glicheKategorieen" length="16777215" />
+        </property>
+        <property name="von" type="timestamp">
+            <column name="Von" length="19" />
+        </property>
+        <property name="bis" type="timestamp">
+            <column name="Bis" length="19" />
+        </property>
+        <property name="m&#246;glicheRabatte" type="string">
+            <column name="M&#246;glicheRabatte" length="16777215" />
+        </property>
+        <property name="studiumHonorar" type="java.lang.Double">
+            <column name="StudiumHonorar" precision="22" scale="0" />
+        </property>
+        <property name="anzahlGruppen" type="java.lang.Short">
+            <column name="AnzahlGruppen" />
+        </property>
+        <property name="tarifid" type="java.lang.Integer">
+            <column name="Tarifid" />
+        </property>
+        <property name="abschlag" type="java.lang.Boolean">
+            <column name="Abschlag" />
+        </property>
+        <set name="honorares" table="honorare" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="KursID" />
+            </key>
+            <one-to-many class="Honorare" />
+        </set>
+        <set name="gruppengeb&#252;hrens" table="gruppengeb&#252;hren" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="KursID" />
+            </key>
+            <one-to-many class="Gruppengeb&#252;hren" />
+        </set>
+        <set name="gebuchtekurses" table="gebuchtekurse" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="KursID" />
+            </key>
+            <one-to-many class="Gebuchtekurse" />
+        </set>
+        <set name="geb&#252;hrens" table="geb&#252;hren" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="KursID" />
+            </key>
+            <one-to-many class="Geb&#252;hren" />
+        </set>
+        <set name="verweildauers" table="verweildauer" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="KursID" />
+            </key>
+            <one-to-many class="Verweildauer" />
+        </set>
+        <set name="kursgruppens" table="kursgruppen" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="KursID" />
+            </key>
+            <one-to-many class="Kursgruppen" />
+        </set>
+    </class>
+</hibernate-mapping>

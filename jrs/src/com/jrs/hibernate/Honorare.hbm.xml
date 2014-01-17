@@ -1,0 +1,63 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated Dec 28, 2013 6:02:02 PM by Hibernate Tools 3.4.0.CR1 -->
+<hibernate-mapping>
+    <class name="Honorare" table="honorare" catalog="jrsdbmysql">
+        <id name="id" type="int">
+            <column name="ID" />
+            <generator class="assigned" />
+        </id>
+        <many-to-one name="kurse" class="Kurse" fetch="select">
+            <column name="KursID" />
+        </many-to-one>
+        <property name="honorar" type="java.lang.Double">
+            <column name="Honorar" precision="22" scale="0" />
+        </property>
+        <property name="lehrerId" type="java.lang.Integer">
+            <column name="LehrerID" />
+        </property>
+        <property name="von" type="timestamp">
+            <column name="Von" length="19" />
+        </property>
+        <property name="bis" type="timestamp">
+            <column name="Bis" length="19" />
+        </property>
+        <property name="unterrichtId" type="java.lang.Integer">
+            <column name="UnterrichtID" />
+        </property>
+        <property name="bezahlt" type="java.lang.Double">
+            <column name="Bezahlt" precision="22" scale="0" />
+        </property>
+        <property name="f&#228;llig" type="java.lang.Boolean">
+            <column name="F&#228;llig" />
+        </property>
+        <property name="bezeichnung" type="string">
+            <column name="Bezeichnung" length="250" />
+        </property>
+        <property name="einzelHonorar" type="java.lang.Boolean">
+            <column name="EinzelHonorar" />
+        </property>
+        <property name="pauschalHonorar" type="java.lang.Boolean">
+            <column name="PauschalHonorar" />
+        </property>
+        <property name="kategorieId" type="java.lang.Integer">
+            <column name="KategorieID" />
+        </property>
+        <property name="datum" type="string">
+            <column name="Datum" length="15" />
+        </property>
+        <property name="auszug" type="string">
+            <column name="Auszug" length="50" />
+        </property>
+        <property name="sonstHonorarId" type="java.lang.Integer">
+            <column name="SonstHonorarID" />
+        </property>
+        <property name="kursGruppe" type="java.lang.Short">
+            <column name="KursGruppe" />
+        </property>
+        <property name="abschlag" type="java.lang.Boolean">
+            <column name="Abschlag" />
+        </property>
+    </class>
+</hibernate-mapping>

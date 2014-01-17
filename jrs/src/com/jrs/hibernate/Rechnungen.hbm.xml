@@ -1,0 +1,51 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated Dec 28, 2013 6:02:02 PM by Hibernate Tools 3.4.0.CR1 -->
+<hibernate-mapping>
+    <class name="Rechnungen" table="rechnungen" catalog="jrsdbmysql">
+        <id name="id" type="int">
+            <column name="ID" />
+            <generator class="assigned" />
+        </id>
+        <many-to-one name="adressen" class="Adressen" fetch="select">
+            <column name="AdresseID" />
+        </many-to-one>
+        <property name="kommentar" type="string">
+            <column name="Kommentar" length="16777215" />
+        </property>
+        <property name="datum" type="timestamp">
+            <column name="Datum" length="19" />
+        </property>
+        <property name="gesamtBrutto" type="java.lang.Double">
+            <column name="GesamtBrutto" precision="22" scale="0" />
+        </property>
+        <property name="skonto" type="java.lang.Float">
+            <column name="Skonto" precision="12" scale="0" />
+        </property>
+        <property name="skontiertBrutto" type="java.lang.Double">
+            <column name="SkontiertBrutto" precision="22" scale="0" />
+        </property>
+        <property name="bezahlt" type="java.lang.Double">
+            <column name="Bezahlt" precision="22" scale="0" />
+        </property>
+        <property name="f&#228;lligAm" type="timestamp">
+            <column name="F&#228;lligAm" length="19" />
+        </property>
+        <property name="skontoGew&#228;hrt" type="java.lang.Boolean">
+            <column name="SkontoGew&#228;hrt" />
+        </property>
+        <property name="gedruckt" type="java.lang.Boolean">
+            <column name="Gedruckt" />
+        </property>
+        <property name="rabattString" type="string">
+            <column name="RabattString" length="16777215" />
+        </property>
+        <property name="rabattText" type="string">
+            <column name="RabattText" length="250" />
+        </property>
+        <property name="f&#228;lligDatum" type="timestamp">
+            <column name="F&#228;lligDatum" length="19" />
+        </property>
+    </class>
+</hibernate-mapping>

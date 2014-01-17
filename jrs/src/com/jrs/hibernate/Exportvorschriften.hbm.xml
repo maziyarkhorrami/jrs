@@ -1,0 +1,40 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated Dec 28, 2013 6:02:02 PM by Hibernate Tools 3.4.0.CR1 -->
+<hibernate-mapping>
+    <class name="Exportvorschriften" table="exportvorschriften" catalog="jrsdbmysql">
+        <composite-id name="id" class="ExportvorschriftenId">
+            <key-property name="id" type="java.lang.Integer">
+                <column name="ID" />
+            </key-property>
+            <key-property name="exportName" type="string">
+                <column name="ExportName" length="250" />
+            </key-property>
+            <key-property name="anschrift" type="java.lang.Integer">
+                <column name="Anschrift" />
+            </key-property>
+            <key-property name="sonstiges" type="java.lang.Integer">
+                <column name="Sonstiges" />
+            </key-property>
+            <key-property name="rest" type="java.lang.Integer">
+                <column name="Rest" />
+            </key-property>
+            <key-property name="sortierung" type="string">
+                <column name="Sortierung" length="16777215" />
+            </key-property>
+            <key-property name="exportformat" type="java.lang.Short">
+                <column name="Exportformat" />
+            </key-property>
+            <key-property name="fileName" type="string">
+                <column name="FileName" length="16777215" />
+            </key-property>
+            <key-property name="tabellenName" type="string">
+                <column name="TabellenName" length="150" />
+            </key-property>
+            <key-property name="ersterDatensatz" type="java.lang.Boolean">
+                <column name="ErsterDatensatz" />
+            </key-property>
+        </composite-id>
+    </class>
+</hibernate-mapping>

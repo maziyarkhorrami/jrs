@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated Dec 28, 2013 6:02:02 PM by Hibernate Tools 3.4.0.CR1 -->
+<hibernate-mapping>
+    <class name="Instrumente" table="instrumente" catalog="jrsdbmysql">
+        <id name="id" type="int">
+            <column name="ID" />
+            <generator class="assigned" />
+        </id>
+        <property name="name" type="string">
+            <column name="Name" length="150" />
+        </property>
+        <property name="gesch&#252;tzt" type="java.lang.Boolean">
+            <column name="gesch&#252;tzt" />
+        </property>
+        <property name="k&#252;rzel" type="string">
+            <column name="K&#252;rzel" length="3" />
+        </property>
+    </class>
+</hibernate-mapping>

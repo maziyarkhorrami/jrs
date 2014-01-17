@@ -1,0 +1,42 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated Dec 28, 2013 6:02:02 PM by Hibernate Tools 3.4.0.CR1 -->
+<hibernate-mapping>
+    <class name="Gruppengeb&#252;hren" table="gruppengeb&#252;hren" catalog="jrsdbmysql">
+        <id name="id" type="int">
+            <column name="ID" />
+            <generator class="assigned" />
+        </id>
+        <many-to-one name="kurse" class="Kurse" fetch="select">
+            <column name="KursID" />
+        </many-to-one>
+        <property name="anzahl" type="java.lang.Short">
+            <column name="Anzahl" />
+        </property>
+        <property name="geb&#252;hr" type="java.lang.Double">
+            <column name="Geb&#252;hr" precision="22" scale="0" />
+        </property>
+        <property name="honorar" type="java.lang.Double">
+            <column name="Honorar" precision="22" scale="0" />
+        </property>
+        <property name="honorar2" type="java.lang.Double">
+            <column name="honorar2" precision="22" scale="0" />
+        </property>
+        <property name="minuten" type="java.lang.Integer">
+            <column name="Minuten" />
+        </property>
+        <property name="gel&#246;scht" type="java.lang.Boolean">
+            <column name="gel&#246;scht" />
+        </property>
+        <property name="honorar3" type="java.lang.Double">
+            <column name="Honorar3" precision="22" scale="0" />
+        </property>
+        <property name="geb&#252;hrErm&#228;ssigt" type="java.lang.Double">
+            <column name="Geb&#252;hrErm&#228;ssigt" precision="22" scale="0" />
+        </property>
+        <property name="geb&#252;hrErm&#228;ssigt2" type="java.lang.Double">
+            <column name="Geb&#252;hrErm&#228;ssigt2" precision="22" scale="0" />
+        </property>
+    </class>
+</hibernate-mapping>

@@ -1,0 +1,99 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated Dec 28, 2013 6:02:02 PM by Hibernate Tools 3.4.0.CR1 -->
+<hibernate-mapping>
+    <class name="Sch&#252;lerinformationen" table="sch&#252;lerinformationen" catalog="jrsdbmysql">
+        <id name="id" type="int">
+            <column name="ID" />
+            <generator class="assigned" />
+        </id>
+        <property name="zahlungsArt" type="java.lang.Integer">
+            <column name="ZahlungsArt" />
+        </property>
+        <property name="zahlungsWeise" type="java.lang.Integer">
+            <column name="ZahlungsWeise" />
+        </property>
+        <property name="wannBeZahlen" type="string">
+            <column name="WannBeZahlen" length="50" />
+        </property>
+        <property name="studiengeb&#252;hr" type="java.lang.Double">
+            <column name="Studiengeb&#252;hr" precision="22" scale="0" />
+        </property>
+        <property name="studBeginn1" type="timestamp">
+            <column name="StudBeginn1" length="19" />
+        </property>
+        <property name="studBeginn2" type="timestamp">
+            <column name="StudBeginn2" length="19" />
+        </property>
+        <property name="studBeginn3" type="timestamp">
+            <column name="StudBeginn3" length="19" />
+        </property>
+        <property name="vorStudBeginn1" type="timestamp">
+            <column name="VorStudBeginn1" length="19" />
+        </property>
+        <property name="vorStudBeginn2" type="timestamp">
+            <column name="VorStudBeginn2" length="19" />
+        </property>
+        <property name="rabattstring" type="string">
+            <column name="Rabattstring" length="16777215" />
+        </property>
+        <property name="bankeinzugAutomatik" type="java.lang.Double">
+            <column name="BankeinzugAutomatik" precision="22" scale="0" />
+        </property>
+        <property name="inaktiv" type="java.lang.Double">
+            <column name="Inaktiv" precision="22" scale="0" />
+        </property>
+        <property name="studiengeb&#252;hr2" type="java.lang.Double">
+            <column name="Studiengeb&#252;hr2" precision="22" scale="0" />
+        </property>
+        <property name="studiengeb&#252;hr3" type="java.lang.Double">
+            <column name="Studiengeb&#252;hr3" precision="22" scale="0" />
+        </property>
+        <property name="vorStudiengeb&#252;hr1" type="java.lang.Double">
+            <column name="VorStudiengeb&#252;hr1" precision="22" scale="0" />
+        </property>
+        <property name="vorStudiengeb&#252;hr2" type="java.lang.Double">
+            <column name="VorStudiengeb&#252;hr2" precision="22" scale="0" />
+        </property>
+        <property name="kategorieStud1" type="java.lang.Integer">
+            <column name="KategorieStud1" />
+        </property>
+        <property name="kategorieStud2" type="java.lang.Integer">
+            <column name="KategorieStud2" />
+        </property>
+        <property name="kategorieStud3" type="java.lang.Integer">
+            <column name="KategorieStud3" />
+        </property>
+        <property name="kategorieVorStud1" type="java.lang.Integer">
+            <column name="KategorieVorStud1" />
+        </property>
+        <property name="kategorieVorStud2" type="java.lang.Integer">
+            <column name="KategorieVorStud2" />
+        </property>
+        <set name="gebuchtekurses" table="gebuchtekurse" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="Sch&#252;lerID" />
+            </key>
+            <one-to-many class="Gebuchtekurse" />
+        </set>
+        <set name="verweildauers" table="verweildauer" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="Sch&#252;lerID" />
+            </key>
+            <one-to-many class="Verweildauer" />
+        </set>
+        <set name="sch&#252;lerinaktivzeitens" table="sch&#252;lerinaktivzeiten" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="Sch&#252;lerID" />
+            </key>
+            <one-to-many class="Sch&#252;lerinaktivzeiten" />
+        </set>
+        <set name="geb&#252;hrens" table="geb&#252;hren" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="Sch&#252;lerID" />
+            </key>
+            <one-to-many class="Geb&#252;hren" />
+        </set>
+    </class>
+</hibernate-mapping>

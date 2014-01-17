@@ -1,0 +1,159 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated Dec 28, 2013 6:02:02 PM by Hibernate Tools 3.4.0.CR1 -->
+<hibernate-mapping>
+    <class name="Adressen" table="adressen" catalog="jrsdbmysql">
+        <id name="id" type="int">
+            <column name="ID" />
+            <generator class="assigned" />
+        </id>
+        <property name="nummer" type="java.lang.Integer">
+            <column name="Nummer" />
+        </property>
+        <property name="angelegtAm" type="timestamp">
+            <column name="AngelegtAm" length="19" />
+        </property>
+        <property name="letzte&#196;nderung" type="timestamp">
+            <column name="Letzte&#196;nderung" length="19" />
+        </property>
+        <property name="gesperrt" type="java.lang.Boolean">
+            <column name="gesperrt" />
+        </property>
+        <property name="geburtsDatum" type="timestamp">
+            <column name="GeburtsDatum" length="19" />
+        </property>
+        <property name="pers&#246;nlicheAnrede" type="string">
+            <column name="Pers&#246;nlicheAnrede" length="150" />
+        </property>
+        <property name="kommentar" type="string">
+            <column name="Kommentar" length="16777215" />
+        </property>
+        <property name="aktiverSch&#252;ler" type="java.lang.Boolean">
+            <column name="AktiverSch&#252;ler" />
+        </property>
+        <property name="actionFlag" type="java.lang.Boolean">
+            <column name="ActionFlag" />
+        </property>
+        <property name="dokumentenOrdner" type="string">
+            <column name="DokumentenOrdner" length="150" />
+        </property>
+        <property name="geschlecht" type="java.lang.Integer">
+            <column name="Geschlecht" />
+        </property>
+        <property name="kontakte" type="string">
+            <column name="Kontakte" length="16777215" />
+        </property>
+        <property name="betreff" type="string">
+            <column name="Betreff" length="50" />
+        </property>
+        <property name="graduierung" type="java.lang.Short">
+            <column name="Graduierung" />
+        </property>
+        <property name="nichtAktuell" type="java.lang.Boolean">
+            <column name="nichtAktuell" />
+        </property>
+        <property name="k&#252;rzel" type="string">
+            <column name="K&#252;rzel" length="50" />
+        </property>
+        <property name="sortierung" type="java.lang.Integer">
+            <column name="Sortierung" />
+        </property>
+        <property name="abschlag" type="java.lang.Double">
+            <column name="Abschlag" precision="22" scale="0" />
+        </property>
+        <property name="betrag" type="java.lang.Boolean">
+            <column name="Betrag" />
+        </property>
+        <set name="adressgruppenverweises" table="adressgruppenverweise" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="AdresseID" />
+            </key>
+            <one-to-many class="Adressgruppenverweise" />
+        </set>
+        <set name="verbindungens" table="verbindungen" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="AdresseID" />
+            </key>
+            <one-to-many class="Verbindungen" />
+        </set>
+        <set name="adressaktionens" table="adressaktionen" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="AdresseID" />
+            </key>
+            <one-to-many class="Adressaktionen" />
+        </set>
+        <set name="rechnungens" table="rechnungen" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="AdresseID" />
+            </key>
+            <one-to-many class="Rechnungen" />
+        </set>
+        <set name="instrumentenverweises" table="instrumentenverweise" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="AdresseID" />
+            </key>
+            <one-to-many class="Instrumentenverweise" />
+        </set>
+        <set name="buchungens" table="buchungen" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="AdresseID" />
+            </key>
+            <one-to-many class="Buchungen" />
+        </set>
+        <set name="interessenverweises" table="interessenverweise" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="AdresseID" />
+            </key>
+            <one-to-many class="Interessenverweise" />
+        </set>
+        <set name="unterrichtsvertraeges" table="unterrichtsvertraege" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="AdresseID" />
+            </key>
+            <one-to-many class="Unterrichtsvertraege" />
+        </set>
+        <set name="bankverbindungens" table="bankverbindungen" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="AdresseID" />
+            </key>
+            <one-to-many class="Bankverbindungen" />
+        </set>
+        <set name="schulabschlussverweises" table="schulabschlussverweise" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="AdresseID" />
+            </key>
+            <one-to-many class="Schulabschlussverweise" />
+        </set>
+        <set name="lehrerk&#252;rzels" table="lehrerk&#252;rzel" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="AdresseID" />
+            </key>
+            <one-to-many class="Lehrerk&#252;rzel" />
+        </set>
+        <set name="staatsverweises" table="staatsverweise" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="AdresseID" />
+            </key>
+            <one-to-many class="Staatsverweise" />
+        </set>
+        <set name="anschriftens" table="anschriften" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="AdresseID" />
+            </key>
+            <one-to-many class="Anschriften" />
+        </set>
+        <set name="briefes" table="briefe" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="AdresseID" />
+            </key>
+            <one-to-many class="Briefe" />
+        </set>
+        <set name="kurslehrerverweises" table="kurslehrerverweise" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="AdresseID" />
+            </key>
+            <one-to-many class="Kurslehrerverweise" />
+        </set>
+    </class>
+</hibernate-mapping>

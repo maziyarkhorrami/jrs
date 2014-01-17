@@ -1,0 +1,69 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated Dec 28, 2013 6:02:02 PM by Hibernate Tools 3.4.0.CR1 -->
+<hibernate-mapping>
+    <class name="Geb&#252;hren" table="geb&#252;hren" catalog="jrsdbmysql">
+        <id name="id" type="int">
+            <column name="ID" />
+            <generator class="assigned" />
+        </id>
+        <many-to-one name="kategorien" class="Kategorien" fetch="select">
+            <column name="KategorieID" />
+        </many-to-one>
+        <many-to-one name="kurse" class="Kurse" fetch="select">
+            <column name="KursID" />
+        </many-to-one>
+        <many-to-one name="zahlungsarten" class="Zahlungsarten" fetch="select">
+            <column name="Zahlungsart" />
+        </many-to-one>
+        <many-to-one name="sch&#252;lerinformationen" class="Sch&#252;lerinformationen" fetch="select">
+            <column name="Sch&#252;lerID" />
+        </many-to-one>
+        <property name="geb&#252;hr" type="java.lang.Double">
+            <column name="Geb&#252;hr" precision="22" scale="0" />
+        </property>
+        <property name="rabatt" type="java.lang.Float">
+            <column name="Rabatt" precision="12" scale="0" />
+        </property>
+        <property name="von" type="timestamp">
+            <column name="Von" length="19" />
+        </property>
+        <property name="bis" type="timestamp">
+            <column name="Bis" length="19" />
+        </property>
+        <property name="unterrichtId" type="java.lang.Integer">
+            <column name="UnterrichtID" />
+        </property>
+        <property name="bezahlt" type="java.lang.Double">
+            <column name="Bezahlt" precision="22" scale="0" />
+        </property>
+        <property name="f&#228;llig" type="java.lang.Boolean">
+            <column name="F&#228;llig" />
+        </property>
+        <property name="rabatte" type="string">
+            <column name="Rabatte" length="16777215" />
+        </property>
+        <property name="realGeb&#252;hr" type="java.lang.Double">
+            <column name="RealGeb&#252;hr" precision="22" scale="0" />
+        </property>
+        <property name="einzelGeb&#252;hr" type="java.lang.Boolean">
+            <column name="EinzelGeb&#252;hr" />
+        </property>
+        <property name="bezeichnung" type="string">
+            <column name="Bezeichnung" length="250" />
+        </property>
+        <property name="rechnung" type="java.lang.Integer">
+            <column name="Rechnung" />
+        </property>
+        <property name="datum" type="string">
+            <column name="Datum" length="15" />
+        </property>
+        <property name="auszug" type="string">
+            <column name="Auszug" length="50" />
+        </property>
+        <property name="erm&#228;ssigt" type="java.lang.Integer">
+            <column name="Erm&#228;ssigt" />
+        </property>
+    </class>
+</hibernate-mapping>

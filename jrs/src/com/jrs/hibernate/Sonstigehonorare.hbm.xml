@@ -1,0 +1,36 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated Dec 28, 2013 6:02:02 PM by Hibernate Tools 3.4.0.CR1 -->
+<hibernate-mapping>
+    <class name="Sonstigehonorare" table="sonstigehonorare" catalog="jrsdbmysql">
+        <id name="id" type="int">
+            <column name="ID" />
+            <generator class="assigned" />
+        </id>
+        <many-to-one name="kategorien" class="Kategorien" fetch="select">
+            <column name="Kategorie" />
+        </many-to-one>
+        <property name="betrag" type="java.lang.Double">
+            <column name="Betrag" precision="22" scale="0" />
+        </property>
+        <property name="lehrer" type="java.lang.Integer">
+            <column name="Lehrer" />
+        </property>
+        <property name="bezeichnung" type="string">
+            <column name="Bezeichnung" length="250" />
+        </property>
+        <property name="status" type="java.lang.Short">
+            <column name="Status" />
+        </property>
+        <property name="von" type="timestamp">
+            <column name="Von" length="19" />
+        </property>
+        <property name="bis" type="timestamp">
+            <column name="Bis" length="19" />
+        </property>
+        <property name="wochenstunden" type="java.lang.Float">
+            <column name="Wochenstunden" precision="12" scale="0" />
+        </property>
+    </class>
+</hibernate-mapping>
